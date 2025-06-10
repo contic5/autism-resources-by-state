@@ -1,0 +1,9 @@
+Main Idea
+This program reads files to create an email to people.
+
+TO DO
+I SHOULD ALSO MAKE THIS IN HTML/JAVASCRIPT.
+
+WRITE TO MICROSOFT WORD DOCUMENT
+
+Run the html version by using npm run dev in terminal.
