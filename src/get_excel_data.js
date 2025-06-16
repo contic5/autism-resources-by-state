@@ -18,7 +18,7 @@ async function to_dictionaries(rows)
 }
 export async function get_excel_data(file_name)
 {
-    return await fetch(`../${file_name}`)
+    return await fetch(`${file_name}`)
   .then(response => response.blob())
   .then(blob => readXlsxFile(blob))
   .then(async(rows) => {

@@ -1,7 +1,7 @@
-const font = new FontFace("Aptos", "url(/Aptos.ttf)");
+const font = new FontFace("Aptos", "url(Aptos.ttf)");
 document.fonts.add(font);
 
-const bold_font = new FontFace("Aptos-Bold", "url(/Aptos-Bold.ttf)");
+const bold_font = new FontFace("Aptos-Bold", "url(Aptos-Bold.ttf)");
 document.fonts.add(bold_font);
 
 document.fonts.ready.then(() => {

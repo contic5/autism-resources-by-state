@@ -92,9 +92,9 @@ function setup()
 
 let email_app=document.getElementById("email_app").value;
 let state=document.getElementById("state_input").value;
-const intro=await getText('public/intro.txt');
-const outro=await getText('public/outro.txt');
-const resources=await(get_excel_data("Autism Resources by State.xlsx"));
+const intro=await getText('intro.txt');
+const outro=await getText('outro.txt');
+const resources=await(get_excel_data("Autism_Resources_by_State.xlsx"));
 let res=document.getElementById("res");
 setup();
 write_email();
