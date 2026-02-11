@@ -54,9 +54,11 @@ function write_resources(target_state)
 function write_email()
 {
   res.innerHTML="";
+  let intro_modified=intro;
+  intro_modified=intro_modified.replace("{STATENAME}",state);
   let intro_p=document.createElement("p");
   res.appendChild(intro_p);
-  intro_p.innerHTML=intro;
+  intro_p.innerHTML=intro_modified;
   if(email_app=="Wix")
   {
     intro_p+="<br>";
@@ -76,6 +78,18 @@ function write_email()
   let outro_p=document.createElement("p");
   res.appendChild(outro_p);
   outro_p.innerHTML=outro;
+
+  let company_img=document.createElement("img");
+  res.appendChild(company_img);
+  company_img.src="https://static.wixstatic.com/media/b69080_2956368e5ddf45b59113f24eff1f1263~mv2.png";
+  company_img.style.display="block";
+
+  let contact_info=document.createElement("p");
+  res.appendChild(contact_info);
+  contact_info.innerHTML=`info@spectrumworks.org<br>
+  201-552-2055<br>
+  565 Windsor Drive<br>
+  Secaucus, NJ 07094`;
 }
 export function update_values()
 {
