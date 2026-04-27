@@ -54,11 +54,19 @@ function write_resources(target_state)
 function write_email()
 {
   res.innerHTML="";
-  let intro_modified=intro;
-  intro_modified=intro_modified.replace("{STATENAME}",state);
+  if(state=="New Jersey")
+  {
+    intro=intro_nj;
+  }
+  else
+  {
+    intro=intro_general;
+  }
+
+  intro=intro.replace("{STATENAME}",state);
   let intro_p=document.createElement("p");
   res.appendChild(intro_p);
-  intro_p.innerHTML=intro_modified;
+  intro_p.innerHTML=intro;
   if(email_app=="Wix")
   {
     intro_p+="<br>";
@@ -106,7 +114,9 @@ function setup()
 
 let email_app=document.getElementById("email_app").value;
 let state=document.getElementById("state_input").value;
-const intro=await getText('intro.txt');
+const intro_general=await getText('intro.txt');
+const intro_nj=await getText('intro_nj.txt');
+let intro=intro_general;
 const outro=await getText('outro.txt');
 const resources=await(get_excel_data("Autism_Resources_by_State.xlsx"));
 let res=document.getElementById("res");
